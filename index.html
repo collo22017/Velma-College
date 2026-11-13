@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>VELMA COLLEGE</h1>
+        <h2>Student Information Portal</h2>
+        <p>Learn Today, Lead Tomorrow</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#registration">Registration</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <section id="home">
+            <h2>Welcome to VELMA College</h2>
+            <p>
+                Welcome to our Student Information Portal.
+                This application provides information about
+                our institution, courses offered and allows
+                students to register online.
+            </p>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>About Our Application</h2>
+            <p>
+                The Student Information Portal is designed
+                to make student registration easier and
+                provide information about academic programmes.
+            </p>
+        </section>
+
+        <!-- COURSES SECTION -->
+        <section id="courses">
+            <h2>Courses Offered</h2>
+
+            <div class="course-container">
+
+                <div class="course">
+                    <h3>BSc Applied Computing</h3>
+                    <p>
+                        Students learn programming, computer
+                        systems, networking and software development.
+                    </p>
+                </div>
+
+                <div class="course">
+                    <h3>Bachelor of Commerce</h3>
+                    <p>
+                        This course focuses on business,
+                        accounting, finance and management.
+                    </p>
+                </div>
+
+                <div class="course">
+                    <h3>Diploma in Business IT</h3>
+                    <p>
+                        Students learn how technology is used
+                        in business operations and management.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- REGISTRATION FORM -->
+        <section id="registration">
+
+            <h2>Student Registration</h2>
+
+            <form id="registrationForm">
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" placeholder="Enter your full name">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+
+                <label for="course">Select Course:</label>
+
+                <select id="course">
+                    <option value="">Choose a course</option>
+                    <option>BSc Applied Computing</option>
+                    <option>Bachelor of Commerce</option>
+                    <option>Diploma in Business IT</option>
+                </select>
+
+                <button type="submit">Register</button>
+
+                <p id="message"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            Email:
+            <a href="mailto:velmankatha67@gmail.com">
+                velmankatha67@gmail.com
+            </a>
+        </p>
+        <p>Phone no: <a href="tel:+254732213100">+254732213100</a></p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/collo22017/collins-portfolio" target="_blank" rel="noopener noreferrer">
+                My GitHub
+            </a>
+        </p>
+
+        <p class="copyright">
+            &copy; 2026 Velma Nkatha. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
