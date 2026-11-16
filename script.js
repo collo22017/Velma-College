@@ -1,48 +1,63 @@
+// MOBILE NAVIGATION
 
-// Get the registration form
-const form = document.getElementById("registrationForm");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-// Listen for form submission
-form.addEventListener("submit", function (event) {
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
 
-    // Prevent page from refreshing
+    const isOpen = navLinks.classList.contains("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+// CLOSE MENU AFTER CLICKING A LINK
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+    });
+});
+
+// AUTOMATIC COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// CONTACT FORM
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function (event) {
+
     event.preventDefault();
 
-    // Get student details
-    let name = document.getElementById("fullname").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let course = document.getElementById("course").value;
+    const name = document.getElementById("visitorName").value.trim();
 
-    let message = document.getElementById("message");
+    const email = document.getElementById("visitorEmail").value.trim();
 
-    // Check whether fields are empty
-    if (name === "" || email === "" || course === "") {
+    const course = document.getElementById("visitorCourse").value;
 
-        message.style.color = "red";
-        message.innerHTML = "Please fill in all the required fields.";
+    const message = document.getElementById("visitorMessage").value.trim();
 
-    }
+    const phoneNumber = "254723155125";
 
-    // Validate email format
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const whatsappMessage =
+        "Hello VELMA University.%0A%0A" +
+        "My name is " + encodeURIComponent(name) + ".%0A" +
+        "My email is " + encodeURIComponent(email) + ".%0A" +
+        "Course of interest: " + encodeURIComponent(course) + ".%0A" +
+        "My enquiry: " + encodeURIComponent(message);
 
-        message.style.color = "red";
-        message.innerHTML = "Please enter a valid email address.";
+    const whatsappURL =
+        "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
 
-    }
+    document.getElementById("formMessage").textContent =
+        "Opening WhatsApp. Please press Send there to submit your enquiry.";
 
-    // Display success message
-    else {
-
-        message.style.color = "green";
-
-        message.innerHTML =
-            "Registration successful! Welcome " + name +
-            ". Your selected course is " + course + ".";
-
-        // Clear the form
-        form.reset();
-
-    }
+    window.open(whatsappURL, "_blank");
 
 });
